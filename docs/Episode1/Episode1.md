@@ -27,11 +27,11 @@ You can find detailed instructions on how to create a GitHub repository on the [
 
 1. Create a repository, we will use `0_to_hero_AVD` for this example
 
-    ![Create repository](./media/1.png)
+    ![Create repository](media/1.png)
 
 2. Clone the repository on your system and open it in your IDE
 
-    ![Open in VSCode](./media/2.png)
+    ![Open in VSCode](media/2.png)
 
 ### Sites file structure
 

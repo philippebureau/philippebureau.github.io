@@ -29,12 +29,12 @@ We will use AVD with Arista [CloudVision Portal](https://www.arista.com/en/produ
 - Deploy playbook
 - CloudVision access
 
-[Episode 2 - Basic config](./docs/Episode2/Episode3.md)
+[Episode 2 - Basic config](docs/Episode2/Episode2.md)
 
 - Basic EOS configuration
 - Makefile
 
-[Episode 3 - Digital Twin](./docs/Episode8/Episode2.md)
+[Episode 3 - Digital Twin](docs/Episode8/Episode3.md)
 
 - Configure AVD digital twin feature
 - Build playbook update for digital twin
