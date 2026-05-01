@@ -10,10 +10,10 @@ baseurl: "" # Keep this empty for a root user site!
 # Theme Selection
 remote_theme: liamg/jekyll-theme-abysm
 
-# Build Settings
-markdown: kramdown
-highlighter: rouge
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
+# # Build Settings
+# markdown: kramdown
+# highlighter: rouge
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
