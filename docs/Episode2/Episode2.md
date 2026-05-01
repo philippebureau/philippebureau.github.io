@@ -37,13 +37,13 @@ The common configurations will be set under the global variables.  As we explain
 
 First, let's create a new file to set the basic shared management configuration, I will use `management.yml` in this example.
 
-![New file](/guide/Episode2/media/1.png)
+![New file](media/1.png)
 
 To find the AVD data-model inputs we want to use in the file, we will go to the [AVD documentation](https://avd.arista.com/6.1/ansible_collections/arista/avd/roles/eos_designs/docs/data-models.html#management-settings) site under the `Management settings` section of AVD Designs.
 
 > [!Note]
 > you can use the search function to find the specific data-model you are looking for.
-> ![Search](/guide/Episode2/media/2.png)
+> ![Search](media/2.png)
 
 Let's start with the local user.
 
@@ -221,7 +221,7 @@ AVD relies on node IDs to assign IPs from pools such as for Loopbacks and uplink
 
 First, let's create a new file under `_global_vars` specific for fabric settings.  I'll call it `fabric_settings.yml` in this example.  And lets add the proper data-model inputs.
 
-![Fabric settings](/guide/Episode2/media/3.png)
+![Fabric settings](media/3.png)
 
 ```yaml
 # enable node id manager
@@ -280,16 +280,16 @@ Let's start with campus.  We will create a new directory called `group_vars` und
 
 Let's create a file called `CAMPUS.yml` under `sites/campus/group_vars`
 
-![Campus variables](/guide/Episode2/media/4.png)
+![Campus variables](media/4.png)
 
 > [!IMPORTANT]
 > The file name **MUST** match (case sensitive) groups defined in the `inventory.yml` file for configurations to apply to devices that are assigned to the Ansible group.
 
-![Match groups](/guide/Episode2/media/6.png)
+![Match groups](media/6.png)
 
 Let's set the fabric topology as per this diagram.
 
-![Topology](/guide/Episode2/media/5.png)
+![Topology](media/5.png)
 
 The top level fabric topology tier `fabric_name` **MUST** match the inventory group that includes **ALL** EOS devices in `inventory.yml`
 
@@ -473,7 +473,7 @@ dc_name: DC2
 
 ```
 
-![DC1 and DC2 variables](/guide/Episode2/media/8.png)
+![DC1 and DC2 variables](media/8.png)
 
 </details>
 
@@ -482,7 +482,7 @@ dc_name: DC2
 AVD must be told what `node type` each EOS devices will be to properly render the configuration and documentation.  This is done using the [Node type variables](https://avd.arista.com/6.1/ansible_collections/arista/avd/roles/eos_designs/docs/data-models.html?h=pool+manager#node-type-variables).
 
 AVD has pre-defined node types to fit many popular designs
-![Node types table](/guide/Episode2/media/7.png) with the support of [Custom Node Types](https://avd.arista.com/6.1/ansible_collections/arista/avd/roles/eos_designs/docs/data-models.html?h=pool+manager#node-type-customization) to support any type of designs.
+![Node types table](media/7.png) with the support of [Custom Node Types](https://avd.arista.com/6.1/ansible_collections/arista/avd/roles/eos_designs/docs/data-models.html?h=pool+manager#node-type-customization) to support any type of designs.
 
 #### Campus
 
@@ -490,7 +490,7 @@ We will build the campus as a L2LS (Layer2 Leaf-Spine) network.  In this design,
 
 Let's begin with the spines.  We will create a file called `SPINES` under `sites/campus/group_vars`
 
-![Spines](/guide/Episode2/media/9.png)
+![Spines](media/9.png)
 
 Add the `type` key and assign the correct value.
 
@@ -650,7 +650,7 @@ The campus leafs are layer 2 leafs and therefore require less configuration.
 
 Let's create a new file called `LEAFS.yml` under `group_vars` that matches the inventory group name for all leafs.
 
-![Leafs](/guide/Episode2/media/10.png)
+![Leafs](media/10.png)
 
 Now, let's set the `type` and the node type structure similar to the spines but only configuring the mlag pool and the management ip for the nodes.  We have to create one node group per pair of leafs in MLAG that we will call `POD1`, `POD2` and `BORDER_POD`
 
@@ -700,7 +700,7 @@ Execute this command in the Terminal
 ansible-playbook playbooks/build.yml -i sites/campus/inventory.yml -e target=CAMPUS
 ```
 
-![Failed build](/guide/Episode2/media/11.png)
+![Failed build](media/11.png)
 
 > [!WARNING]
 > Oh no! We got an error.  AVD is pretty good at providing feedback when something goes wrong.
@@ -713,7 +713,7 @@ ansible-playbook playbooks/build.yml -i sites/campus/inventory.yml -e target=CAM
 
 A quick [search](https://avd.arista.com/6.1/ansible_collections/arista/avd/roles/eos_designs/docs/data-models.html?h=mlag_interfaces#node-type-l2-and-mlag-configuration) on AVD documentation site takes us to the input details.
 
-![MLAG interfaces](/guide/Episode2/media/12.png)
+![MLAG interfaces](media/12.png)
 
 As per the documentation details, `mlag_interfaces` is required when MLAG nodes are present.
 
@@ -815,17 +815,17 @@ l2leaf:
 
 Let's take a second try at the playbook execution
 
-![Working build](/guide/Episode2/media/13.png)
+![Working build](media/13.png)
 
 Great, no errors!  Several things just happened, let's take a deeper look.
 
 Two new folders were created by the AVD execution, `documentation` and `intended`.
 
-![New folders](/guide/Episode2/media/14.png)
+![New folders](media/14.png)
 
 The documentation splits in to other folders, `devices` and `fabric`
 
-![Documentation](/guide/Episode2/media/15.png)
+![Documentation](media/15.png)
 
 Each sub-folder stores either device specific or fabric wide documentation rendered by AVD.  Feel free to explore those files.
 
@@ -834,23 +834,23 @@ Each sub-folder stores either device specific or fabric wide documentation rende
 >
 > To see the "preview", right click on the file and select `open in preview`
 >
-> ![Preview](/guide/Episode2/media/16.png)
+> ![Preview](media/16.png)
 
 The `intended` folder, contains multiple sub-folders: `configs`, `data` and `structured_configs`.
 
-![Intended](/guide/Episode2/media/17.png)
+![Intended](media/17.png)
 
 `data` contains the database created by the id manager we configured in the fabric numbering section
 
-![Node IDs](/guide/Episode2/media/18.png)
+![Node IDs](media/18.png)
 
 `structured_configs` contains a structured data representation for each devices intended state.
 
-![Structured configs](/guide/Episode2/media/19.png)
+![Structured configs](media/19.png)
 
 `configs` is where the redered configuration for each devices are stored.
 
-![Rendered configs](/guide/Episode2/media/20.png)
+![Rendered configs](media/20.png)
 
 #### DCs
 
@@ -860,7 +860,7 @@ The DCs will use EVPN/VXLAN.
 
 Let's look back at the default node type feature table to find the type for our design
 
-![Node type table](/guide/Episode2/media/7.png)
+![Node type table](media/7.png)
 
 The correct type for our design are `spine` for the spines, `l3leaf` for the VTEP leafs and `l2leaf` for the sub-leafs.
 
@@ -916,7 +916,7 @@ spine:
 
 ```
 
-![Spines layout](/guide/Episode2/media/21.png)
+![Spines layout](media/21.png)
 
 ##### VTEPs
 
@@ -1015,7 +1015,7 @@ l3leaf:
           mgmt_ip: 192.168.0.201/24
 ```
 
-![Leaf layout](/guide/Episode2/media/22.png)
+![Leaf layout](media/22.png)
 
 ##### Layer 2 LEAFs in DC1
 
@@ -1044,7 +1044,7 @@ l2leaf:
 
 ```
 
-![L2 leaf layout](/guide/Episode2/media/23.png)
+![L2 leaf layout](media/23.png)
 
 ##### Build
 
@@ -1066,13 +1066,13 @@ ansible-playbook playbooks/build.yml -i sites/DC2/inventory.yml -e target=DC2
 
 After execution, each DC will have the `documentation` and `intended`
 
-![Working build](/guide/Episode2/media/24.png)
+![Working build](media/24.png)
 
 ## Conclusion and house keeping
 
 We now have minimalistic configurations for the three sites.  Now seems like a good time to commit our changes and sync to GitHub.
 
-![Commit](/guide/Episode2/media/25.png)
+![Commit](media/25.png)
 
 It would be great to be able to push this to the devices and make sure it works.
 
