@@ -8,7 +8,7 @@ url: "https://philippebureau.github.io"
 baseurl: "" # Keep this empty for a root user site!
 
 # Theme Selection
-remote_theme: liamg/jekyll-theme-abysm
+remote_theme: abhinavs/moonwalk
 
 # # Build Settings
 # markdown: kramdown
