@@ -10,8 +10,9 @@ baseurl: "" # Keep this empty for a root user site!
 # Theme Selection
 remote_theme: abhinavs/moonwalk
 
-# force dark mode
-appearance: "dark"
+# Core Moonwalk configuration
+theme_config:
+  appearance: "dark"
 
 # # Build Settings
 # markdown: kramdown
