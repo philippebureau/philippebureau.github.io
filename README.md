@@ -1,3 +1,6 @@
+# 0 to Hero AVD
+![logo](./media/0_2_hero.png)
+
 ## Introduction
 
 This repository is meant to be used as a reference for the "0 to hero" video series.
@@ -14,7 +17,7 @@ We will use AVD with Arista [CloudVision Portal](https://www.arista.com/en/produ
 
 ## Episodes guides
 
-[Episode 1 - AVD preprations](./docs/Episode1/Episode1.md)
+[Episode 1 - AVD preprations]([./docs/Episode1/Episode1.md](https://github.com/philippebureau/philippebureau.github.io/blob/main/docs/Episode1/Episode1.md))
 
 - Topology review
 - Repo creation
