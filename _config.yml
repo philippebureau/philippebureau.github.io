@@ -7,21 +7,8 @@ email: pbureau@arista.com
 url: "https://philippebureau.github.io"
 baseurl: "" # Keep this empty for a root user site!
 
-# # Theme Selection
-# remote_theme: abhinavs/moonwalk
+markdown: GFM
+# Required for nested markdown in html
+kramdown:
+  input: GFM
 
-# # Core Moonwalk configuration
-# theme_config:
-#   appearance: "dark"
-#   appearance_toggle: true
-#   show_navbar: true
-
-# highlighter: rouge
-
-# sass:
-#   style: :compressed
-
-# plugins:
-#   - jekyll-feed
-#   - jekyll-sitemap
-#   - jekyll-soopr-seo-tag
