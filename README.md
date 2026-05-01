@@ -1,18 +1,3 @@
-# 0_2_Hero reference repo
-
-![Main icon](./media/0_2_hero.png)
-
-## topology
-
-![Topology diagram](./media/diagram.png)
-
-## AVD 0 to hero video series
-
-This repository is a reference to the AVD 0 to hero video series.
-It is a meant as a a reference to follow the different episodes and help build your own lab to learn.
-
-## Public repo README content
-
 ## Introduction
 
 This repository is meant to be used as a reference for the "0 to hero" video series.
@@ -29,7 +14,7 @@ We will use AVD with Arista [CloudVision Portal](https://www.arista.com/en/produ
 
 ## Episodes guides
 
-[Episode 1 - AVD preprations](./guide/Episode1/Episode1.md)
+[Episode 1 - AVD preprations](./docs/Episode1/Episode1.md)
 
 - Topology review
 - Repo creation
@@ -41,41 +26,41 @@ We will use AVD with Arista [CloudVision Portal](https://www.arista.com/en/produ
 - Deploy playbook
 - CloudVision access
 
-[Episode 2 - Basic config](./guide/Episode2/Episode3.md)
+[Episode 2 - Basic config](./docs/Episode2/Episode3.md)
 
 - Basic EOS configuration
 - Makefile
 
-[Episode 3 - Digital Twin](./guide/Episode8/Episode2.md)
+[Episode 3 - Digital Twin](./docs/Episode8/Episode2.md)
 
 - Configure AVD digital twin feature
 - Build playbook update for digital twin
 - Deploy playbook for digital twin
 
-[Episode 4 - Underlay](./guide/Episode3/Episode4.md)
+[Episode 4 - Underlay](./docs/Episode3/Episode4.md)
 
 - Build the underlays
 - Testing playbook
 
-[Episode 5 - Overlay](./guide/Episode4/Episode5.md)
+[Episode 5 - Overlay](./docs/Episode4/Episode5.md)
 
 - Build the overlay / Network services
   - Tenants
   - Svi
   - l2vlan
 
-[Episode 6 - Endpoint connectivity](./guide/Episode5/Episode6.md)
+[Episode 6 - Endpoint connectivity](./docs/Episode5/Episode6.md)
 
 - Connected Endpoints
 - Network ports
 
-[Episode 7 - WAN / DCI](./guide/Episode6/Episode7.md)
+[Episode 7 - WAN / DCI](./docs/Episode6/Episode7.md)
 
 - DCI
 - Campus Inter-connect
 - EVPN Gateway
 
-[Episode 8 - Pipelines](./guide/Episode7/Episode8.md)
+[Episode 8 - Pipelines](./docs/Episode7/Episode8.md)
 
 - Feature branch auto build and testing
 - Create CVP Change Control on merge to the main branch
