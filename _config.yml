@@ -1,0 +1,19 @@
+# Site Settings
+title: Philippe Bureau
+description: 0 to Hero guides
+email: pbureau@arista.com
+
+# URL Settings (Crucial for user pages)
+url: "https://philippebureau.github.io"
+baseurl: "" # Keep this empty for a root user site!
+
+# Theme Selection
+remote_theme: liamg/jekyll-theme-abysm
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
