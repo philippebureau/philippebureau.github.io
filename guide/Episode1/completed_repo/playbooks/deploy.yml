@@ -1,0 +1,13 @@
+- name: Configuration deployment
+  hosts: "{{ target }}"
+  connection: local
+  gather_facts: false
+  # ansible vault file
+  vars_files: ../vault.yml
+  tasks:
+    - name: Deploy configurations and tags to CloudVision
+      ansible.builtin.import_role:
+        name: arista.avd.cv_deploy
+      vars:
+        cv_server: www.cv-prod-na-northeast1-b.arista.io
+        cv_token: "{{ vault_cv_token }}"

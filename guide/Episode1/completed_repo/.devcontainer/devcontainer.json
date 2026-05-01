@@ -1,0 +1,6 @@
+{
+    "name": "AVD Universal",
+    "image": "ghcr.io/aristanetworks/avd/universal:python3.13-avd-v6.1.0",
+    // user to use in the container
+    "remoteUser": "avd"
+}
