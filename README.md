@@ -17,7 +17,7 @@ We will use AVD with Arista [CloudVision Portal](https://www.arista.com/en/produ
 
 ## Episodes guides
 
-[Episode 1 - AVD preprations]([./docs/Episode1/Episode1.md](https://github.com/philippebureau/philippebureau.github.io/blob/main/docs/Episode1/Episode1.md))
+[Episode 1 - AVD preprations](https://github.com/philippebureau/philippebureau.github.io/blob/main/docs/Episode1/Episode1.md)
 
 - Topology review
 - Repo creation
