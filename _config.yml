@@ -13,6 +13,7 @@ remote_theme: abhinavs/moonwalk
 # Core Moonwalk configuration
 theme_config:
   appearance: "dark"
+  appearance_toggle: true
 
 # # Build Settings
 # markdown: kramdown
