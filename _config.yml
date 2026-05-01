@@ -15,3 +15,13 @@ theme_config:
   appearance: "dark"
   appearance_toggle: true
   show_navbar: true
+
+highlighter: rouge
+
+sass:
+  style: :compressed
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-soopr-seo-tag
