@@ -39,7 +39,7 @@ AVD can be configured to managed multiple locations as a single AVD fabric or mu
 
 1. Create a directory at the root of your repository, we will use `sites` in this repository and create `DC1`, `DC2`, `campus` sub-directories to match our topology.
 
-    ![Create directories](./media/3.png)
+    ![Create directories](media/3.png)
 
 ### Ansible
 
@@ -63,7 +63,7 @@ The first item we need to set is the Ansible configuration file to instruct Ansi
 
     We recommend to "error out" on duplicate keys, the default Ansible behavior is to issue a warning in the playbook output.
 
-    ![Add ansible.cfg](./media/4.png)
+    ![Add ansible.cfg](media/4.png)
 
 3. Add AVD global_vars plugin settings (optional)
 
@@ -75,7 +75,7 @@ The first item we need to set is the Ansible configuration file to instruct Ansi
 
     First let's create the new directory under the `sites` directory
 
-    ![Directory structure](./media/5.png)
+    ![Directory structure](media/5.png)
 
     Next we need to add the global vars settings in the ansible.cfg
 
@@ -225,7 +225,7 @@ all:
 
 Below is an example of the current inventory structure.
 
-![Inventory structure](./media/6.png)
+![Inventory structure](media/6.png)
 
 > [!Note]
 > See more details on [Ansible inventory](https://docs.ansible.com/projects/ansible/devel/inventory_guide/intro_inventory.html)
@@ -251,7 +251,7 @@ We will use this container for this example but feel free to use your preferred 
 
 2. Set the `devcontainer.json` file with the image target the AVD version you want to run.  In this example AVD 6.0.0 with python 3.13
 
-    ![Container configuration](./media/9.png)
+    ![Container configuration](media/9.png)
 
     devcontainer.json:
 
@@ -266,11 +266,11 @@ We will use this container for this example but feel free to use your preferred 
 
 3. Use VScode command palette to `Rebuild and Reopen in Container`
 
-    ![Rebuild and Reopen in Container](./media/10.png)
+    ![Rebuild and Reopen in Container](media/10.png)
 
 We now have a working AVD environment.
 
-![AVD container](./media/11.png)
+![AVD container](media/11.png)
 
 > [!Note]
 > See more details on using [AVD containers](https://avd.arista.com/6.0/docs/containers/overview.html)
@@ -282,7 +282,7 @@ Ansible will be used to run AVD.  AVD has a build phase and a deploy phase so we
 
 It is fairly typical to create a directory to store all the playbooks.  Let's create a `playbooks` directory and two files called `build.yml` and `deploy.yml`
 
-![Playbook structure](./media/7.png)
+![Playbook structure](media/7.png)
 
 The build playbook will run AVD build phase that renders the documentation and the EOS devices configuration.  It will run two roles in the ansible.avd collection called `eos_designs` and `eos_cli_config_gen`
 
@@ -347,7 +347,7 @@ CloudVision Portal requires a service account token to use APIs.  Create a token
 
 1. Create a YAML file that will be encrypted later.  We will use `vault.yml` in this example and create a key with the token as the key value.  We will use `vault_cv_token` in this example
 
-    ![Vault file](./media/8.png)
+    ![Vault file](media/8.png)
 
 2. Encrypt the vault file with the `ansible-vault` command as follow `ansible-vault encrypt vault.yml`
 
@@ -357,15 +357,15 @@ CloudVision Portal requires a service account token to use APIs.  Create a token
 
     > Make sure not to git commit the vault.yml file before encrypting it otherwise the clear text content would be available through git commit history.
 
-    ![Encrypted vault file](./media/12.png)
+    ![Encrypted vault file](media/12.png)
 
 3. Set the `cv_token` variable value in the `deploy.yml` playbook with the key we created in the vault.yml file using inline Jinja.
 
-    ![Deploy playbook](./media/13.png)
+    ![Deploy playbook](media/13.png)
 
 4. We have to make the content of the `vault.yml` file available to the deploy playbook at runtime.  We will use the `vars_file` variable in the play that runs the AVD cv_deploy role.
 
-    ![using vars file](./media/14.png)
+    ![using vars file](media/14.png)
 
 <details>
   <summary>Expand for the full deploy.yml content</summary>
@@ -400,4 +400,4 @@ It is now time to commit what we have to Git and sync with the remote repository
 > [!Note]
 > Make sure you have set your git `user.name` and `user.email`
 
-![Git commit](./media/15.png)
+![Git commit](media/15.png)
