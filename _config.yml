@@ -7,8 +7,11 @@ email: pbureau@arista.com
 url: "https://philippebureau.github.io"
 baseurl: "" # Keep this empty for a root user site!
 
-markdown: GFM
-# Required for nested markdown in html
-kramdown:
-  input: GFM
+remote_theme: jekyll/minima
 
+minima:
+  skin: dark
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-gfm-admonitions
