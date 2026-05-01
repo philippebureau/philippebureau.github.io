@@ -15,5 +15,3 @@ minima:
 plugins:
   - jekyll-remote-theme
   - jekyll-gfm-admonitions
-
-header_pages: []
